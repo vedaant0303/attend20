@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <p class="logo-text">Attendance Management System</p>
+            </div>
+            <div class="nav-profile"></div>
+        </div>
+    </header>
+    
+    <div class="welcome">
+        <h1>Hello,</h1>
+        <p id="displayArea"></p>
+    </div>
+
+    <div class="main-section">
+        <div class="subject-container">
+            <div class="subject-text-container">
+                <p class="Subjects">Subjects</p>
+            </div>
+        </div>
+
+        <div class="main-subjects">
+            <!-- Engineering Maths-III -->
+            <div class="main-subjects-container" style="background-color: #E9FF97;">
+                <div class="main-subjects-container-contents">
+                    <p>Engineering</p>
+                    <p>Maths-III</p>
+                    <button onclick="generateSubjectUrl('Maths-III')">Generate URL</button>
+                </div>
+            </div>
+
+            <!-- Data Structure -->
+            <div class="main-subjects-container" style="background-color: #E5D9F2;">
+                <div class="main-subjects-container-contents">
+                    <p>Data</p>
+                    <p>Structure</p>
+                    <button onclick="generateSubjectUrl('Data Structure')">Generate URL</button>
+                </div>
+            </div>
+
+            <!-- Digital Logic and Computer Architecture -->
+            <div class="main-subjects-container" style="background-color: #D2E0FB;">
+                <div class="main-subjects-container-contents">
+                    <p>Digital Logic</p>
+                    <p>Computer Architecture</p>
+                    <button onclick="generateSubjectUrl('Digital Logic and Computer Architecture')">Generate URL</button>
+                </div>
+            </div>
+
+            <!-- Discrete Structure and Graph Theory -->
+            <div class="main-subjects-container" style="background-color: #FFC96F;">
+                <div class="main-subjects-container-contents">
+                    <p>Discrete Structure</p>
+                    <p>Graph Theory</p>
+                    <button onclick="generateSubjectUrl('Discrete Structure and Graph Theory')">Generate URL</button>
+                </div>
+            </div>
+
+            <!-- Computer Graphics -->
+            <div class="main-subjects-container" style="background-color: #CAF4FF;">
+                <div class="main-subjects-container-contents">
+                    <p>Computer</p>
+                    <p>Graphics</p>
+                    <button onclick="generateSubjectUrl('Computer Graphics')">Generate URL</button>
+                </div>
+            </div>
+
+            <!-- Object-Oriented Programming with Java -->
+            <div class="main-subjects-container" style="background-color: #FFEC9E;">
+                <div class="main-subjects-container-contents">
+                    <p>Object-Oriented</p>
+                    <p>Programming with Java</p>
+                    <button onclick="generateSubjectUrl('Object-Oriented Programming with Java')">Generate URL</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function generateSubjectUrl(subject) {
+            var encodedSubject = encodeURIComponent(subject);
+            var generatedUrl = "attendance.html?subject=" + encodedSubject;
+            window.location.href = "main(s).html?generatedUrl=" + encodeURIComponent(generatedUrl);
+        }
+
+        // Get the value from localStorage and display it
+        var inputValue = localStorage.getItem("inputValue");
+        document.getElementById("displayArea").innerText = inputValue;
+    </script>
+
+</body>
+</html>

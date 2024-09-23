@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Page</title>
+    <link rel="stylesheet" href="index.css"> <!-- Reusing the same CSS for styling -->
+</head>
+<body>
+    <div class="main-container">
+        <div class="container-text">
+            <p>Attendance Confirmation</p>
+        </div>
+        <div class="inputs">
+            <p id="displayName"></p> <!-- To display the extracted name -->
+            <p>Your attendance has been successfully recorded.</p>
+        </div>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        // Function to get the query parameter value from the URL
+        function getQueryParam(param) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Retrieve the "name" parameter from the URL and display it
+        var name = getQueryParam('name');
+        if (name) {
+            document.getElementById('displayName').textContent = "Welcome, " + decodeURIComponent(name) + "!";
+        } else {
+            document.getElementById('displayName').textContent = "Name not found!";
+        }
+
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="container-text">
+            <p>Student Login Page</p>
+        </div>
+        <div class="inputs">
+            <input type="text" id="studentName" class="input-text" placeholder="Enter your name">
+        </div>
+        <button onclick="saveStudentNameAndGoToDisplayPage()">Submit</button>
+    </div>
+
+    <script>
+        function saveStudentNameAndGoToDisplayPage() {
+            // Get the value from the input field
+            var studentName = document.getElementById("studentName").value;
+
+            // Save the value to localStorage
+            localStorage.setItem("studentName", studentName);
+
+            // Redirect to the display page
+            window.location.href = "main(s).html";
+        }
+    </script>
+</body>
+</html>

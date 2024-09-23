@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="Sign Up (s).css">
+    
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="container-text">
+            <h1>Create an Account</h1>
+        </div>
+        <div class="signup-container">
+            <input type="text" id="name" class="input-text" placeholder="Enter your name"><br><br>
+            <input type="email" id="email" class="input-text" placeholder="Enter your email"><br><br>
+            <input type="password" id="password" class="input-text" placeholder="Enter your password"><br><br>
+            <input type="password" id="confirmPassword" class="input-text" placeholder="Confirm your password"><br><br>
+            <button onclick="signUp()">Sign Up</button><br><br>
+            <p>Already have an account? <a href="Home Page (s) .html">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function signUp() {
+            // Get the values of the input fields
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Check if all fields are filled
+            if (!name || !email || !password || !confirmPassword) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            // Here you can add logic to send this data to the server or store it locally
+            // For now, we'll just save it in localStorage
+            localStorage.setItem("name", name);
+            localStorage.setItem("email", email);
+
+            alert("Account created successfully!");
+
+            // Redirect to the login page
+            window.location.href = "Student Login.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #A594F9;
+}
+
+/* Main container styling */
+.main-container {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling for the title text */
+.container-text p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4A4A4A;
+    margin-bottom: 30px;
+}
+
+/* Input field styling */
+.input-text {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .main-container {
+        width: 90%;
+    }
+}

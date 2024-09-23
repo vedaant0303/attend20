@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page (Subjects)</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <p class="logo-text">Attendance Management System</p>
+            </div>
+            <div class="nav-profile"></div>
+        </div>
+    </header>
+    
+    <div class="welcome">
+        <h1>Hello,</h1>
+        <p id="displayArea"></p>
+    </div>
+
+    <div class="main-section">
+        <div class="subject-container">
+            <div class="subject-text-container">
+                <p class="Subjects">Generated URLs</p>
+            </div>
+        </div>
+
+        <div class="main-subjects">
+            <!-- URL Containers for Subjects -->
+            <div class="main-subjects-container" style="background-color: #E9FF97;">
+                <div class="main-subjects-container-contents">
+                    <p>Engineering Maths-III</p>
+                    <p id="urlContainerMaths-III"></p>
+                </div>
+            </div>
+
+            <div class="main-subjects-container" style="background-color: #E5D9F2;">
+                <div class="main-subjects-container-contents">
+                    <p>Data Structure</p>
+                    <p id="urlContainerData-Structure"></p>
+                </div>
+            </div>
+
+            <div class="main-subjects-container" style="background-color: #D2E0FB;">
+                <div class="main-subjects-container-contents">
+                    <p>Digital Logic and Computer Architecture</p>
+                    <p id="urlContainerDigital-Logic-and-Computer-Architecture"></p>
+                </div>
+            </div>
+
+            <div class="main-subjects-container" style="background-color: #FFC96F;">
+                <div class="main-subjects-container-contents">
+                    <p>Discrete Structure and Graph Theory</p>
+                    <p id="urlContainerDiscrete-Structure-and-Graph-Theory"></p>
+                </div>
+            </div>
+
+            <div class="main-subjects-container" style="background-color: #CAF4FF;">
+                <div class="main-subjects-container-contents">
+                    <p>Computer Graphics</p>
+                    <p id="urlContainerComputer-Graphics"></p>
+                </div>
+            </div>
+
+            <div class="main-subjects-container" style="background-color: #FFEC9E;">
+                <div class="main-subjects-container-contents">
+                    <p>Object-Oriented Programming with Java</p>
+                    <p id="urlContainerObject-Oriented-Programming-with-Java"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParams() {
+            var params = {};
+            var queryString = window.location.search.slice(1);
+            var pairs = queryString.split("&");
+            pairs.forEach(function(pair) {
+                var keyValue = pair.split("=");
+                params[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+            });
+            return params;
+        }
+
+        // Extract the generated URL and map it to the right subject
+        var queryParams = getQueryParams();
+        if (queryParams.generatedUrl) {
+            var generatedUrl = queryParams.generatedUrl;
+
+            // Based on the subject, map it to the correct container
+            if (generatedUrl.includes('Maths-III')) {
+                document.getElementById("urlContainerMaths-III").innerHTML = 
+                    `<a href="${generatedUrl}" target="_blank">Go to attendance page</a>`;
+            } else if (generatedUrl.includes('Data Structure')) {
+                document.getElementById("urlContainerData-Structure").innerHTML = 
+                    `<a href="${generatedUrl}" target="_blank">Go to attendance page</a>`;
+            } else if (generatedUrl.includes('Digital Logic and Computer Architecture')) {
+                document.getElementById("urlContainerDigital-Logic-and-Computer-Architecture").innerHTML = 
+                    `<a href="${generatedUrl}" target="_blank">Go to attendance page</a>`;
+            } else if (generatedUrl.includes('Discrete Structure and Graph Theory')) {
+                document.getElementById("urlContainerDiscrete-Structure-and-Graph-Theory").innerHTML = 
+                    `<a href="${generatedUrl}" target="_blank">Go to attendance page</a>`;
+            } else if (generatedUrl.includes('Computer Graphics')) {
+                document.getElementById("urlContainerComputer-Graphics").innerHTML = 
+                    `<a href="${generatedUrl}" target="_blank">Go to attendance page</a>`;
+            } else if (generatedUrl.includes('Object-Oriented Programming with Java')) {
+                document.getElementById("urlContainerObject-Oriented-Programming-with-Java").innerHTML = 
+                    `<a href="${generatedUrl}" target="_blank">Go to attendance page</a>`;
+            }
+        }
+
+        // Get the value from localStorage and display it
+        var inputValue = localStorage.getItem("inputValue");
+        document.getElementById("displayArea").innerText = inputValue;
+    </script>
+
+</body>
+</html>

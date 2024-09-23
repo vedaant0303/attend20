@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="Home Page (s).css">
+    
+    
+    
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="container-text">
+            <h1>Welcome to the Student Portal</h1>
+        </div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <input type="text" id="username" class="input-text" placeholder="Enter your username"><br><br>
+            <input type="password" id="password" class="input-text" placeholder="Enter your password"><br><br>
+            <button onclick="login()">Login</button><br><br>
+            <p>Don't have an account?</p>
+            <button onclick="signUp()">Sign Up</button>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            // Get the values of the username and password fields
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if the username and password fields are not empty
+            if (!username || !password) {
+                alert("Please enter both username and password.");
+                return;
+            }
+
+            // You can add authentication logic here to verify the user credentials
+            // For now, we'll just store the username and redirect to the student page
+
+            localStorage.setItem("username", username);
+            // Redirect to student login page
+            window.location.href = "Student Login.html";
+        }
+
+        function signUp() {
+            // Redirect to a sign-up page (you can create a separate page for signing up)
+            window.location.href = "Sign Up (s).html";
+           
+        }
+    </script>
+</body>
+</html>
